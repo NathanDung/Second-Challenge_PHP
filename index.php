@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start(); 
+// $manager = 'Admin';
+// if (($_SESSION['username']) == $manager) {
+//     echo "管理員狀態";
+// } else {
+//     echo "不知道";
+// }
+?>
     <style>
         table {
             border: 1px solid #666;
