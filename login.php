@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) { ?>
         alert("登入失敗，請重新登入")
     </script>
 <?php
-    header ("Refresh:0; url=./system.php");
+    header ("Refresh:0; url=./index.php");
 }
 $conn->close();
 exit();

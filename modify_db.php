@@ -29,33 +29,33 @@ if (isset($old_password) && isset($new_password_1) && isset($new_password_2)) {
                 </script>
                 <?php
                     unset($_SESSION['username']);
-                    header("Refresh:0; url=./system.php");
+                    header("Refresh:0; url=./index.php");
             } else { ?>
                 <script>
                     alert("新密碼及驗證碼輸入錯誤，請重新輸入")
                 </script>
                 <?php
-                header("Refresh:0; url=./modify.php");
+                header("Refresh:0; url=./index.php");
             }
         } else { ?>
             <script>
                 alert("舊密碼輸入錯誤，請重新輸入")
             </script>
             <?php
-            header("Refresh:0; url=./modify.php");
+            header("Refresh:0; url=./index.php");
         }
     } else { ?>
         <script>
             alert("輸入錯誤，請重新輸入")
         </script>
         <?php
-        header("Refresh:0; url=./modify.php");
+        header("Refresh:0; url=./index.php");
     }
 } else { ?>
     <script>
         alert("輸入錯誤，請重新輸入")
     </script>
     <?php
-    header("Refresh:0; url=./modify.php");
+    header("Refresh:0; url=./index.php");
 }
 ?>

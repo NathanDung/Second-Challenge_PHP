@@ -22,39 +22,39 @@ if (mysqli_num_rows($result) == 0) {
                 $register = "INSERT INTO members (username, email, password_1, password_2) VALUES ('$username', '$email', md5('$password_1'), md5('$password_2'))";
                 if (mysqli_query($conn, $register) == 1) { ?>
                     <script>
-                        alert("註冊成功")
+                        alert("註冊成功，請登入後留言")
                     </script>
                     <?php
-                    header("Refresh:0; url=./system.php");
+                    header("Refresh:0; url=./index.php");
                 } else { ?>
                     <script>
                         alert("格式有誤，請重新輸入")
                     </script>
-                    <?php header("Refresh:0; url=./register.php");
+                    <?php header("Refresh:0; url=./index.php");
                 }
             } else { ?>
                 <script>
                     alert("欄位不可為空，請重新輸入")
                 </script>
-                <?php header("Refresh:0; url=./register.php");
+                <?php header("Refresh:0; url=./index.php");
             }
         }else { ?>
             <script>
                 alert("格式有誤，請重新輸入")
             </script>
-            <?php header("Refresh:0; url=./register.php");
+            <?php header("Refresh:0; url=./index.php");
         }
     } else { ?>
         <script>
             alert("密碼及驗證密碼不同，請重新輸入")
         </script>
-        <?php header("Refresh:0; url=./register.php");
+        <?php header("Refresh:0; url=./index.php");
     }
 }else { ?>
     <script>
         alert("使用者名稱或Email重複，請重新輸入")
     </script>
-    <?php header("Refresh:0; url=./register.php");
+    <?php header("Refresh:0; url=./index.php");
 }
 $conn->close();
 ?>

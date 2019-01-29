@@ -9,22 +9,26 @@ $name = mysqli_real_escape_string($pig, trim($_SESSION['username']));
 $message = mysqli_real_escape_string($pig, trim($_POST['message']));
 if (! empty ($message)) {
     $sql = "INSERT INTO datas (username, message) VALUES ('$name', '$message')";
-    if (mysqli_query($pig, $sql)) { ?>
+    if (mysqli_query($pig, $sql)) {
+	$pig->close();
+?>
         <script>
-            alert("新增留言成功")
+            alert("新增留言成功");
+			window.location.href = "./index.php";
         </script>
         <?php
-        header ("Refresh:0; url=./index.php");
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($pig);
-    }
-} else { ?>
+		}
+} else { 
+	$pig->close();
+?>
     <script>
-        alert("留言欄不可為空，請重新輸入")
+        alert("留言欄不可為空，請重新輸入");
+		history.go(-1);
     </script>
     <?php
-    header ("Refresh:0; url=./message.php");
 }
-$pig->close();
+
 exit();
 ?>
